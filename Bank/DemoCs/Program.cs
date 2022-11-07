@@ -59,13 +59,13 @@ namespace DemoCs
             #endregion
         }
 
-        private static void ShowCustomer(Customer customer0)
+        private static void ShowCustomer(Customer customer)
         {
-            Console.WriteLine("Nombre: " + customer0.Name);
-            Console.WriteLine("DNI: " + customer0.Dni);
-            Console.WriteLine("Fecha de Nacimiento: " + customer0.BirthDay);
-            Console.WriteLine("Edad: " + customer0.Age);
-            Console.WriteLine("Nacionalidad: " + customer0.Nationality);
+            Console.WriteLine("Nombre: " + customer.Name);
+            Console.WriteLine("DNI: " + customer.Dni);
+            Console.WriteLine("Fecha de Nacimiento: " + customer.BirthDay);
+            Console.WriteLine("Edad: " + customer.Age);
+            Console.WriteLine("Nacionalidad: " + customer.Nationality);
         }
     }
 }
