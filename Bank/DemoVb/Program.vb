@@ -7,7 +7,6 @@ Module Program
         customer0.Name = "Juan Perez"
         customer0.Dni = 544466
         customer0.BirthDay = #2000-05-8#
-
         ShowCustomer(customer0)
 #End Region
 
@@ -55,11 +54,11 @@ Module Program
 #End Region
     End Sub
 
-    Private Sub ShowCustomer(customer0 As Customer)
-        Console.WriteLine("Nombre :" & customer0.Name)
-        Console.WriteLine("DNI :" & customer0.Dni)
-        Console.WriteLine("Fecha de nacimiento :" & customer0.BirthDay)
-        Console.WriteLine("Edad :" & customer0.Age)
-        Console.WriteLine("Nacionalidad: " & customer0.Nationality)
+    Private Sub ShowCustomer(customer As Customer)
+        Console.WriteLine("Nombre :" & customer.Name)
+        Console.WriteLine("DNI :" & customer.Dni)
+        Console.WriteLine("Fecha de nacimiento :" & customer.BirthDay)
+        Console.WriteLine("Edad :" & customer.Age)
+        Console.WriteLine("Nacionalidad: " & customer.Nationality)
     End Sub
 End Module
