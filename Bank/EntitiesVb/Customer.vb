@@ -2,6 +2,18 @@ Public Class Customer
     Private _name As String
     Private _dni As Integer
     Private _birthDay As Date
+    Public Sub New()
+        Nationality = "Argentino"
+    End Sub
+    Public Sub New(name As String, dni As Integer)
+        Me.New()
+        Me.Name = name
+        Me.Dni = dni
+    End Sub
+    Public Sub New(name As String, dni As Integer, birthDay As Date)
+        Me.New(name, dni)
+        Me.BirthDay = birthDay
+    End Sub
 
     Public Property Name As String
         Get
@@ -40,4 +52,5 @@ Public Class Customer
             Return _age
         End Get
     End Property
+    Public Property Nationality As String
 End Class

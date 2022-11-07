@@ -11,10 +11,7 @@ namespace DemoCs
             customer0.Dni = 35456665;
             customer0.BirthDay = new DateTime(2000, 5, 8);
 
-            Console.WriteLine("Nombre: " + customer0.Name);
-            Console.WriteLine("DNI: " + customer0.Dni);
-            Console.WriteLine("Fecha de Nacimiento: " + customer0.BirthDay);
-            Console.WriteLine("Edad: " + customer0.Age);
+            ShowCustomer(customer0);
             #endregion
 
             #region Customer2
@@ -27,6 +24,18 @@ namespace DemoCs
             Console.WriteLine("DNI: " + customer1.Dni);
             customer1.Dni = 2354355;
             Console.WriteLine("DNI: " + customer1.Dni);
+            Console.WriteLine("Nacionalidad: " + customer1.Nacionalidad);
+
+            #region Customer3
+            Customer customer3 = new Customer("Juana", 35466575);
+            ShowCustomer(customer3);
+            #endregion
+
+            #region Customer4
+            Customer customer4 = new Customer("Jhon", 12345678, new DateTime(1990, 2, 25));
+            ShowCustomer(customer4);
+            #endregion
+
 
             customer1.BirthDay = new DateTime(2010, 5, 8);
             Console.WriteLine("Fecha de Nacimiento: " + customer1.BirthDay);
@@ -41,7 +50,21 @@ namespace DemoCs
             account0.Enabled = true;
             Console.WriteLine("Cuenta número: " + account0.Number);
             Console.WriteLine("Cuenta habilitada: " + account0.Enabled);
-            #region
+            Console.WriteLine("Saldo: " + account0.Balance);
+            account0.Deposit(10000);
+            Console.WriteLine("Saldo: " + account0.Balance);
+            account0.WithDraw(4000);
+            Console.WriteLine("Saldo: " + account0.Balance);
+            #endregion
+        }
+
+        private static void ShowCustomer(Customer customer0)
+        {
+            Console.WriteLine("Nombre: " + customer0.Name);
+            Console.WriteLine("DNI: " + customer0.Dni);
+            Console.WriteLine("Fecha de Nacimiento: " + customer0.BirthDay);
+            Console.WriteLine("Edad: " + customer0.Age);
+            Console.WriteLine("Nacionalidad: " + customer0.Nacionalidad);
         }
     }
 }

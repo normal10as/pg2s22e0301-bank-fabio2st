@@ -1,4 +1,7 @@
 ﻿Public Class Account
+    Public Sub New()
+
+    End Sub
     Public Property Number As Integer
     Public Property Enabled As Boolean
     Private _balance As Decimal
