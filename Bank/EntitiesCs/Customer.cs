@@ -7,16 +7,16 @@
         private DateTime birthDay;
         public Customer()
         {
-            Nacionalidad = "Argentino";
+            Nationality = "Argentino";
         }
         public Customer(string name, int dni) : this()
         {
             Name = name;
             Dni = dni;
         }
-        public Customer(string name, int dni, DateTime dateTime) : this(name, dni)
+        public Customer(string name, int dni, DateTime birthDay) : this(name, dni)
         {
-            BirthDay = dateTime;
+            BirthDay = birthDay;
         }
 
         public string Name
@@ -64,6 +64,6 @@
                 return (UInt16)age;
             }
         }
-        public string Nacionalidad { get; set; }
+        public string Nationality { get; set; }
     }
 }

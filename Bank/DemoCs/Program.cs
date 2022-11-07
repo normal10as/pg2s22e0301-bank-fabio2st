@@ -5,7 +5,7 @@ namespace DemoCs
     {
         static void Main(string[] args)
         {
-            #region Customer1
+            #region Customer0
             Customer customer0 = new Customer();
             customer0.Name = "Juan Perez";
             customer0.Dni = 35456665;
@@ -14,7 +14,7 @@ namespace DemoCs
             ShowCustomer(customer0);
             #endregion
 
-            #region Customer2
+            #region Customer1
             Customer customer1 = new Customer();
             customer1.Name = "Alf";
             Console.WriteLine("Nombre: " + customer1.Name);
@@ -24,7 +24,8 @@ namespace DemoCs
             Console.WriteLine("DNI: " + customer1.Dni);
             customer1.Dni = 2354355;
             Console.WriteLine("DNI: " + customer1.Dni);
-            Console.WriteLine("Nacionalidad: " + customer1.Nacionalidad);
+            customer1.Nationality = "Extraterrestial";
+            Console.WriteLine("Nacionalidad: " + customer1.Nationality);
 
             #region Customer3
             Customer customer3 = new Customer("Juana", 35466575);
@@ -64,7 +65,7 @@ namespace DemoCs
             Console.WriteLine("DNI: " + customer0.Dni);
             Console.WriteLine("Fecha de Nacimiento: " + customer0.BirthDay);
             Console.WriteLine("Edad: " + customer0.Age);
-            Console.WriteLine("Nacionalidad: " + customer0.Nacionalidad);
+            Console.WriteLine("Nacionalidad: " + customer0.Nationality);
         }
     }
 }
