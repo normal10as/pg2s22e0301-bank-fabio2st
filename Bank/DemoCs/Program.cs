@@ -13,7 +13,6 @@ namespace DemoCs
 
             ShowCustomer(customer0);
             #endregion
-
             #region Customer1
             Customer customer1 = new Customer();
             customer1.Name = "Alf";
@@ -26,23 +25,19 @@ namespace DemoCs
             Console.WriteLine("DNI: " + customer1.Dni);
             customer1.Nationality = "Extraterrestial";
             Console.WriteLine("Nacionalidad: " + customer1.Nationality);
-
-            #region Customer3
-            Customer customer3 = new Customer("Juana", 35466575);
-            ShowCustomer(customer3);
-            #endregion
-
-            #region Customer4
-            Customer customer4 = new Customer("Jhon", 12345678, new DateTime(1990, 2, 25));
-            ShowCustomer(customer4);
-            #endregion
-
-
             customer1.BirthDay = new DateTime(2010, 5, 8);
             Console.WriteLine("Fecha de Nacimiento: " + customer1.BirthDay);
             customer1.BirthDay = new DateTime(1757, 10, 28);
             Console.WriteLine("Fecha de Nacimiento: " + customer1.BirthDay);
             Console.WriteLine("Edad: " + customer1.Age);
+            #endregion
+            #region Customer2
+            Customer customer2 = new Customer("Juana", 35466575);
+            ShowCustomer(customer2);
+            #endregion
+            #region Customer3
+            Customer customer3 = new Customer("Jhon", 12345678, new DateTime(1990, 2, 25));
+            ShowCustomer(customer3);
             #endregion
 
             #region Account0
