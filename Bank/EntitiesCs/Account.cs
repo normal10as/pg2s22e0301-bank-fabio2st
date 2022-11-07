@@ -8,7 +8,21 @@ namespace EntitiesCs
 {
     public class Account
     {
+        private Decimal _balance = 0;
         public int Number { get; set; }
         public bool Enabled { get; set; }
+        public Decimal Balance { get => _balance; }
+        public void Deposit(Decimal value)
+        {
+            plusBalance(value);
+        }
+        public void WithDraw(Decimal value)
+        {
+            plusBalance(-value);
+        }
+        private void plusBalance(decimal value)
+        {
+            _balance += value;
+        }
     }
 }
