@@ -2,6 +2,10 @@
     Public Sub New()
 
     End Sub
+    Public Sub New(number As Integer, balance As Decimal)
+        Me.Number = number
+        _balance = balance
+    End Sub
     Public Property Number As Integer
     Public Property Enabled As Boolean
     Private _balance As Decimal

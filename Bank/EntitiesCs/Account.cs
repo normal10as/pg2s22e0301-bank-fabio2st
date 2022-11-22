@@ -9,6 +9,14 @@ namespace EntitiesCs
     public class Account
     {
         private Decimal _balance = 0;
+        public Account()
+        {
+        }
+        public Account(int number, decimal balance)
+        {
+            Number = number;
+            _balance = balance;
+        }
         public int Number { get; set; }
         public bool Enabled { get; set; }
         public Decimal Balance { get => _balance; }

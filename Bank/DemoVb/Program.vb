@@ -43,22 +43,39 @@ Module Program
         Dim account0 As New Account()
         account0.Number = 23434
         account0.Enabled = True
-
-        Console.WriteLine("Número de cuenta: " & account0.Number)
-        Console.WriteLine("Cuenta habilitada: " & account0.Enabled)
-        Console.WriteLine("Saldo: " & account0.Balance)
+        ShowAccount(account0)
         account0.Deposit(10000)
         Console.WriteLine("Saldo: " & account0.Balance)
         account0.Withdraw(4000)
         Console.WriteLine("Saldo: " & account0.Balance)
 #End Region
+#Region "Account1"
+        Dim account1 As New SavingAccount(34567, 0, 5)
+        ShowAccount(account1)
+        account1.Deposit(10000)
+        Console.WriteLine("Saldo: " & account1.Balance)
+        account1.Withdraw(4000)
+        Console.WriteLine("Saldo: " & account1.Balance)
+        account1.DepositMonthlyInterest()
+        Console.WriteLine("Saldo: " & account1.Balance)
+#End Region
+    End Sub
+
+    Private Sub ShowAccount(account As Account)
+        Console.WriteLine("Número de cuenta: " & account.Number)
+        Console.WriteLine("Cuenta habilitada: " & account.Enabled)
+        Console.WriteLine("Saldo: " & account.Balance)
+    End Sub
+    Private Sub ShowAccount(savingAccount As SavingAccount)
+        ShowAccount(DirectCast(savingAccount, Account))
+        Console.WriteLine("Interes Mensual: " & savingAccount.MonthlyInterestRate & "%")
     End Sub
 
     Private Sub ShowCustomer(customer As Customer)
-        Console.WriteLine("Nombre :" & customer.Name)
-        Console.WriteLine("DNI :" & customer.Dni)
-        Console.WriteLine("Fecha de nacimiento :" & customer.BirthDay)
-        Console.WriteLine("Edad :" & customer.Age)
+        Console.WriteLine("Nombre: " & customer.Name)
+        Console.WriteLine("DNI: " & customer.Dni)
+        Console.WriteLine("Fecha de nacimiento: " & customer.BirthDay)
+        Console.WriteLine("Edad: " & customer.Age)
         Console.WriteLine("Nacionalidad: " & customer.Nationality)
     End Sub
 End Module

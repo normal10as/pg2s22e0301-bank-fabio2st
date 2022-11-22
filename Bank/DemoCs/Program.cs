@@ -44,16 +44,36 @@ namespace DemoCs
             Account account0 = new Account();
             account0.Number = 323445;
             account0.Enabled = true;
-            Console.WriteLine("Cuenta número: " + account0.Number);
-            Console.WriteLine("Cuenta habilitada: " + account0.Enabled);
-            Console.WriteLine("Saldo: " + account0.Balance);
+            ShowAccount(account0);
             account0.Deposit(10000);
             Console.WriteLine("Saldo: " + account0.Balance);
             account0.WithDraw(4000);
             Console.WriteLine("Saldo: " + account0.Balance);
             #endregion
+            #region Account1
+            SavingAccount account1 = new SavingAccount(34567, 0, 5);
+            ShowAccount(account1);
+            
+            account1.Deposit(10000);          
+            Console.WriteLine("Saldo: " + account1.Balance);
+            account1.WithDraw(4000);
+            Console.WriteLine("Saldo: " + account1.Balance);
+            account1.DepositMonthlyInterest();
+            Console.WriteLine("Saldo: " + account1.Balance);
+            #endregion        
         }
 
+        private static void ShowAccount(Account account0)
+        {
+            Console.WriteLine("Cuenta número: " + account0.Number);
+            Console.WriteLine("Cuenta habilitada: " + account0.Enabled);
+            Console.WriteLine("Saldo: " + account0.Balance);
+        }
+        private static void ShowAccount(SavingAccount savingAccount)
+        {
+            ShowAccount((Account)savingAccount);
+            Console.WriteLine("Interes mensual: " + savingAccount.MonthlyInterestRate);
+        }
         private static void ShowCustomer(Customer customer)
         {
             Console.WriteLine("Nombre: " + customer.Name);
