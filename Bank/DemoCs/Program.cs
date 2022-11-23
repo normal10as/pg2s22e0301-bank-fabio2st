@@ -39,11 +39,24 @@ namespace DemoCs
             Customer customer3 = new Customer("Jhon", 12345678, new DateTime(1990, 2, 25));
             ShowCustomer(customer3);
             #endregion
+            #region
+            Bank bank = new Bank();
+            bank.AddCustomer(customer0);
+            bank.AddCustomer(customer1);
+            bank.AddCustomer(customer2);
+            bank.AddCustomer(customer3);
 
+            Console.WriteLine("Lista de clientes");
+            foreach (Customer customer in bank.GetCustomers())
+            {
+                Console.WriteLine(customer.Name);
+            }
+            #endregion
             #region Account0
             Account account0 = new Account();
             account0.Number = 323445;
             account0.Enabled = true;
+            account0.Customer = customer1;
             ShowAccount(account0);
             account0.Deposit(10000);
             Console.WriteLine("Saldo: " + account0.Balance);
@@ -52,6 +65,7 @@ namespace DemoCs
             #endregion
             #region Account1
             SavingAccount account1 = new SavingAccount(34567, 0, 5);
+            account1.Customer = customer2;
             ShowAccount(account1);
             
             account1.Deposit(10000);          
@@ -63,11 +77,12 @@ namespace DemoCs
             #endregion        
         }
 
-        private static void ShowAccount(Account account0)
+        private static void ShowAccount(Account account)
         {
-            Console.WriteLine("Cuenta número: " + account0.Number);
-            Console.WriteLine("Cuenta habilitada: " + account0.Enabled);
-            Console.WriteLine("Saldo: " + account0.Balance);
+            Console.WriteLine("Cuenta número: " + account.Number);
+            Console.WriteLine("Cliente: " + account.Customer.Name);
+            Console.WriteLine("Cuenta habilitada: " + account.Enabled);
+            Console.WriteLine("Saldo: " + account.Balance);
         }
         private static void ShowAccount(SavingAccount savingAccount)
         {

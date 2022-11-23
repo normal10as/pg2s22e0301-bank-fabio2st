@@ -19,6 +19,7 @@ namespace EntitiesCs
         }
         public int Number { get; set; }
         public bool Enabled { get; set; }
+        public Customer Customer { get; set; }
         public Decimal Balance { get => _balance; }
         public void Deposit(Decimal value)
         {

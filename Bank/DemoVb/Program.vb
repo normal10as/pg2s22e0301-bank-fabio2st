@@ -9,7 +9,6 @@ Module Program
         customer0.BirthDay = #2000-05-8#
         ShowCustomer(customer0)
 #End Region
-
 #Region "Customer1"
         Dim customer1 As New Customer()
         customer1.Name = "Alf"
@@ -28,21 +27,30 @@ Module Program
         customer1.Nationality = "Extraterrestrial"
         Console.WriteLine("Nacionalidad: " & customer1.Nationality)
 #End Region
-
 #Region "Customer2"
         Dim customer2 = New Customer("Juana", 34567890)
         ShowCustomer(customer2)
 #End Region
-
 #Region "Customer3"
         Dim customer3 = New Customer("Jhon", 12345678, #1990-2-25#)
         ShowCustomer(customer3)
 #End Region
-
+#Region "Banco"
+        Dim bank As New Bank()
+        bank.AddCustomer(customer0)
+        bank.AddCustomer(customer1)
+        bank.AddCustomer(customer2)
+        bank.AddCustomer(customer3)
+        Console.WriteLine("Lista de clientes")
+        For Each customer As Customer In bank.GetCustomers
+            Console.WriteLine(customer.Name)
+        Next
+#End Region
 #Region "Account0"
         Dim account0 As New Account()
         account0.Number = 23434
         account0.Enabled = True
+        account0.Customer = customer1
         ShowAccount(account0)
         account0.Deposit(10000)
         Console.WriteLine("Saldo: " & account0.Balance)
@@ -51,6 +59,7 @@ Module Program
 #End Region
 #Region "Account1"
         Dim account1 As New SavingAccount(34567, 0, 5)
+        account1.Customer = customer2
         ShowAccount(account1)
         account1.Deposit(10000)
         Console.WriteLine("Saldo: " & account1.Balance)
@@ -63,6 +72,7 @@ Module Program
 
     Private Sub ShowAccount(account As Account)
         Console.WriteLine("Número de cuenta: " & account.Number)
+        Console.WriteLine("Cliente: " & account.Customer.Name)
         Console.WriteLine("Cuenta habilitada: " & account.Enabled)
         Console.WriteLine("Saldo: " & account.Balance)
     End Sub

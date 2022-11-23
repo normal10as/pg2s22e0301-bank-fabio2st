@@ -14,6 +14,8 @@
             Return _balance
         End Get
     End Property
+    Public Property Customer As Customer
+
     Public Sub Deposit(value As Decimal)
         plusBalance(value)
     End Sub
